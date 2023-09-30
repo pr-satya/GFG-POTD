@@ -1,0 +1,26 @@
+void booleanMatrix(int matrix[][])
+{
+        // code here 
+        int row = matrix.length;
+        int col = matrix[0].length;
+        
+        boolean row_update[] = new boolean[row];
+        boolean col_update[] = new boolean[col];
+        
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                if(matrix[i][j]==1){
+                    row_update[i]=true;
+                    col_update[j]=true;
+                }
+            }
+        }
+        
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                   if(row_update[i] || col_update[j] ){
+                       matrix[i][j]=1;
+                   }
+            }
+        }
+  }
